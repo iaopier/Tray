@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trayapi.vendedores.Models.VendaModel;
 import com.trayapi.vendedores.Models.VendedorModel;
 import com.trayapi.vendedores.Service.VendaService;
 import com.trayapi.vendedores.Service.VendedorService;
@@ -30,4 +31,9 @@ public class APIController {
 	public ResponseEntity<?> vendedorGetAll(){
 		return new ResponseEntity<>(vendedorService.findAll(), HttpStatus.OK);
 	}
+	@RequestMapping(value = "/lancavenda", method = RequestMethod.POST)
+	public ResponseEntity<?> lancaVenda(@RequestBody VendaModel venda){
+		return new ResponseEntity<>(vendaService.save(venda), HttpStatus.OK);
+	}
+	
 }
