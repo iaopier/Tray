@@ -3,9 +3,11 @@ package com.trayapi.vendedores.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trayapi.vendedores.Models.VendaModel;
@@ -34,6 +36,10 @@ public class APIController {
 	@RequestMapping(value = "/lancavenda", method = RequestMethod.POST)
 	public ResponseEntity<?> lancaVenda(@RequestBody VendaModel venda){
 		return new ResponseEntity<>(vendaService.save(venda), HttpStatus.OK);
+	}
+	@RequestMapping(value = "/listavenda/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> listaVenda(@PathVariable(value="id") long id){
+		return new ResponseEntity<>(vendaService.findByIdVendedor(id), HttpStatus.OK);
 	}
 	
 }

@@ -49,4 +49,9 @@ class TrayApiApplicationTests {
 	    
 	    
 	}
+	
+	@Test
+	public void listaVendedores() throws Exception {
+		mockMvc.perform(get("http://localhost:8080/listavendedores")).andExpect(status().isOk());
+	}
 }

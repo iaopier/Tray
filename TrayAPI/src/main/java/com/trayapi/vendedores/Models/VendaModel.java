@@ -24,12 +24,18 @@ public class VendaModel {
 	@Column(name = "id")
 	private int id;
 	@Column
-	private int idVendedor;
+	private long idVendedor;
+	@Column
+	private String email;
+	@Column
+	private String nome;
 	@Column
 	private double valorVenda;
 	@UpdateTimestamp
 	@Column
 	private Date dataVenda;
+	@Column
+	private double comissao;
 
 	public VendaModel() {
 		super();
@@ -43,20 +49,51 @@ public class VendaModel {
 		this.id = id;
 	}
 
-	public int getIdVendedor() {
-		return idVendedor;
-	}
-
-	public void setIdVendedor(int idVendedor) {
-		this.idVendedor = idVendedor;
-	}
-
 	public double getValorVenda() {
 		return valorVenda;
 	}
 
 	public void setValorVenda(double valorVenda) {
 		this.valorVenda = valorVenda;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getDataVenda() {
+		return dataVenda;
+	}
+
+	public void setDataVenda(Date dataVenda) {
+		this.dataVenda = dataVenda;
+	}
+
+	public double getComissao() {
+		return comissao;
+	}
+
+	public void setComissao(double comissao) {
+		this.comissao = comissao;
+	}
+	public long getIdVendedor() {
+		return idVendedor;
+	}
+
+	public void setIdVendedor(long idVendedor) {
+		this.idVendedor = idVendedor;
 	}
 
 }

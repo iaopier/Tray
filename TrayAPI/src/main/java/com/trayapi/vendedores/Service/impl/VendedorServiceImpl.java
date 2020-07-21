@@ -1,6 +1,7 @@
 package com.trayapi.vendedores.Service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,12 @@ public class VendedorServiceImpl implements VendedorService {
 	public List<VendedorModel> findAll() {
 		return vendedorRepository.findAll();
 	}
+
+	@Override
+	public Optional<VendedorModel> findById(long id) {
+		return vendedorRepository.findById(id);
+	}
+	
+	
 
 }
