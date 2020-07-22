@@ -26,9 +26,9 @@ public class TrayApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TrayApiApplication.class, args);
 	}
-	
-	@PostConstruct
-    public void sendEmail() throws UnsupportedEncodingException, InterruptedException {
-        emailSender.sendEmail();
-    }
+	//Email com problemas de two factor auth
+	//@PostConstruct
+    //public void sendEmail() throws UnsupportedEncodingException, InterruptedException {
+     //   emailSender.sendEmail();
+    //}
 }
