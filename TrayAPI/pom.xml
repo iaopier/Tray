@@ -56,10 +56,9 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.awaitility</groupId>
-			<artifactId>awaitility</artifactId>
-			<version>3.1.2</version>
-			<scope>runtime</scope>
+			<groupId>it.ozimov</groupId>
+			<artifactId>spring-boot-email-core</artifactId>
+			<version>0.5.0</version>
 		</dependency>
 	</dependencies>
 
