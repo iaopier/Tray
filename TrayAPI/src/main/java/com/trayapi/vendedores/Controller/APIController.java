@@ -3,6 +3,7 @@ package com.trayapi.vendedores.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import com.trayapi.vendedores.Models.VendaModel;
 import com.trayapi.vendedores.Models.VendedorModel;
 import com.trayapi.vendedores.Service.VendaService;
 import com.trayapi.vendedores.Service.VendedorService;
-
+@CrossOrigin
 @RestController
 public class APIController {
 	
@@ -24,7 +25,7 @@ public class APIController {
 	@Autowired
 	VendaService vendaService;
 	
-	
+
 	@RequestMapping(value = "/criar", method = RequestMethod.POST)
 	public ResponseEntity<?> vendedorPost(@RequestBody VendedorModel vendedor) {
 		return new ResponseEntity<>(vendedorService.save(vendedor), HttpStatus.OK);

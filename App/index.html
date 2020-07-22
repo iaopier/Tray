@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="app.js"></script>
+<body>
+	<style>
+table, th, td {
+	border: 1px solid black;
+}
+</style>
+	<h1>App</h1>
+	<div>
+		<table>
+			<tr>
+				<th><h2>Lista de Vendedores</h2></th>
+				<th><h2>Criar Vendedor</h2></th>
+				<th><h2>Lançar nova venda</h2></th>
+				<th><h2>Listar venda de Vendedor</h2></th
+			</tr>
+			<tr>
+				<td><div id="listaVendedores"></div></td>
+				<td><div id="criarVendedores">
+						<form>
+							<label for="nome">Nome:</label><br> <input
+								type="text" id="nome" name="nome"><br>
+							<label for="email">Email:</label><br> <input
+								type="text" id="email" name="email"><br>
+								<input type="button" value="Criar" onclick="criarVendedor()">	
+						</form>
+					</div></td>
+					<td><div id="lancarVenda">
+						<form>
+							<label for="idvend">ID do Vendedor:</label><br> <input
+								type="text" id="idvend" name="idvend"><br>
+							<label for="valorvend">Valor da Venda:</label><br> <input
+								type="text" id="valorvend" name="valorvend"><br>
+								<input type="button" value="Criar" onclick="lancarVenda()">	
+						</form>
+					</div></td>
+					<td><form>
+							<label for="idlist">ID do Vendedor:</label><br> <input
+								type="text" id="idlist" name="idlistr"><br>
+							<input type="button" value="Consultar" onclick="listarVendas()">	
+						</form><div id="listaVendasVendedor">
+					</div></td>
+					
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
